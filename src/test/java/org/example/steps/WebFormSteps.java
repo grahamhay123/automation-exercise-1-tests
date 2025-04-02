@@ -87,7 +87,7 @@ public class WebFormSteps {
     @Given("^I open the Web form page$")
     public void INavigateToThePage() {
         final String webForm = "web-form.html";
-        driver.get("https://www.selenium.dev/selenium/web/" + webForm);
+        webFormPage.openWebFormPage();
         assertTrue("Expected the current page url to contain " + webForm, driver.getCurrentUrl().contains(webForm));
     }
 

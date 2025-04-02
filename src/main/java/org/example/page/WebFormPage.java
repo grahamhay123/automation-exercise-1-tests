@@ -20,6 +20,8 @@ public class WebFormPage {
 
     public By returnToIndexByLinkTextSelector = new By.ByLinkText(returnToIndex);
 
+    public final static String webFormPageUrl = "https://www.selenium.dev/selenium/web/web-form.html";
+
     WebDriver driver;
 
     public WebFormPage(WebDriver driver) {
@@ -170,5 +172,9 @@ public class WebFormPage {
 
     public void clickReturnToIndexLinkTextElement(){
         returnToIndexLinkTextElement.click();
+    }
+
+    public void openWebFormPage() {
+        driver.get(webFormPageUrl);
     }
 }
