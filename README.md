@@ -1,14 +1,16 @@
 # automation-exercise-1-tests
 
-After cloning this project to run the tests please navigate to the project folder 'automation-exercise-1' in a terminal window.
+After cloning this project to run the tests please navigate to the project folder 'automation-exercise-1-tests' in a terminal window.
 
-It uses a Maven build and the tests can be run with - mvn clean test
+It uses a Maven build and the tests can be run with - 
+
+mvn clean test
 
 The project build can also be performed and the feature file run from within IntelliJ (or other IDE).
 
 The maven command to run the tests will generate a Cucumber report here -
 
-automation-exercise-1/target/cucumber-reports.html
+automation-exercise-1-tests/target/cucumber-reports.html
 
 The tests currently use a chrome driver so tests need to be performed using a Chrome browser installed until other drivers can be added.
 
