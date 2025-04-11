@@ -38,7 +38,7 @@ public class WebFormSteps {
 
     @Before
     public void setUpScenario() {
-        driver = DriverUtils.setWebDriver("safari");
+        driver = DriverUtils.setWebDriver("chrome");
 
         webFormPage = new WebFormPage(driver);
         submittedFormPage = new SubmittedFormPage(driver);
