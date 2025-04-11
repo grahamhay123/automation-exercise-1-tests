@@ -12,8 +12,6 @@ The maven command to run the tests will generate a Cucumber report here -
 
 automation-exercise-1-tests/target/cucumber-reports.html
 
-The tests currently use a chrome driver so tests need to be performed using a Chrome browser installed until other drivers can be added.
-
 Testing was performed on a macbook pro x86_64 version (not arm64) with macOS Big Sur 11.5.2 (16GB RAM) installed and Ryzen 7800X3D x64 with Windows 11 (64GB RAM) installed.
 
 The tests all passed when amended to run with either "chrome", "firefox", "edge" and "safari" drivers. The tests currently use a chrome driver.
