@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>automation-exercise-1</artifactId>
+    <artifactId>automation-exercise-1-tests</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -14,10 +14,16 @@
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v134 -->
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-manager -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-devtools-v134</artifactId>
+            <artifactId>selenium-manager</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v135 -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-devtools-v135</artifactId>
             <version>${selenium.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
@@ -66,7 +72,7 @@
 
     <properties>
         <cucumber.version>7.21.1</cucumber.version>
-        <selenium.version>4.30.0</selenium.version>
+        <selenium.version>4.31.0</selenium.version>
         <commons.lang.version>2.4</commons.lang.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
         <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>

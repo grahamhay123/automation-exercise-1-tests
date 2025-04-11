@@ -1,16 +1,24 @@
 package org.example.page;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 
 public class WebFormPage {
+
+    public final static String titleElementLocator = "head > title";
+
+    public By titleElementByCssSelector = new By.ByCssSelector(titleElementLocator);
 
     public final static String exampleRangeElementLocator = "input[type='range'][name='my-range']";
 
@@ -129,8 +137,12 @@ public class WebFormPage {
         dropdownDatalistElement.sendKeys(dropdownDatalist);
     }
 
-    public void enterDatalistDate(String dropdownDatalistDate){
-        datePickerElement.sendKeys(dropdownDatalistDate);
+    public void chooseColorPickerValue(String colorPicker) {
+        ((JavascriptExecutor) driver).executeScript("document.getElementsByName('my-colors')[0].value='" + colorPicker + "';");
+    }
+
+    public void enterDatePickerDate(String datePicker){
+        datePickerElement.sendKeys(datePicker);
     }
 
     public File findUploadFile(String expectedFileInput) throws IOException {
@@ -142,6 +154,10 @@ public class WebFormPage {
 
     public void uploadFile(File uploadFile) {
         fileInputElement.sendKeys(uploadFile.getAbsolutePath());
+    }
+
+    public void setExampleRange(String exampleRange) {
+        ((JavascriptExecutor) driver).executeScript("$(arguments[0]).val(" + exampleRange + ").change()", exampleRangeElement);
     }
 
     public void selectDefaultOrCheckedCheckbox(String checkbox, String checkedStatus) {
@@ -171,7 +187,7 @@ public class WebFormPage {
     }
 
     public void clickReturnToIndexLinkTextElement(){
-        returnToIndexLinkTextElement.click();
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(returnToIndexByLinkTextSelector)).click();
     }
 
     public void openWebFormPage() {

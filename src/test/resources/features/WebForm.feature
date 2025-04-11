@@ -3,24 +3,21 @@ Feature: WebForm
   Please note: There is no validation on the page therefore no unhappy paths will be tested until criteria is specified
 
   Background:
-    Given I open the Web form page
-    And   I verify the Web form page title
+    Given I visit the Web form page
 
 
   Scenario: The submitted Web form page navigates successfully to the Web form - target page
     When I submit the Web form
-    Then I navigate to the submitted-form page
-    And  I verify the Web form - target page page title
+    Then I navigate to the Web form - target page page
     And  I see the Form submitted target page heading
     And  I see the Received! target page confirmation message
 
 
   Scenario: The Return to index link navigates to the Index page where the Web form page can be revisited
     When I click the Return to index link
-    Then I navigate to the index page
+    Then I navigate to the Index of Available Pages page
     And  I click the web-form.html index page link
-    And  I navigate to the web-form page
-    And  I verify the Web form page title
+    And  I navigate to the Web form page
 
 
   Scenario Outline: All submitted web-form page values are set and assigned to target page url parameters correctly
@@ -43,7 +40,7 @@ Feature: WebForm
     And  I select the Default radio button to <default_radio_button>
 
     And  I submit the Web form
-    Then I navigate to the submitted-form page
+    Then I navigate to the Web form - target page page
     And  I verify the target page url parameter string has pair values
       | my-text      | my-password | my-textarea           | my-select         | my-datalist         | my-colors      | my-date       | my-file              | my-range        | my-readonly      | my-radio               |
       | <text_input> | <password>  | <text_area>           | <dropdown_select> | <dropdown_datalist> | <color_picker> | <date_picker> | <file_input>         | <example_range> | <readonly_input> | <default_radio_button> |

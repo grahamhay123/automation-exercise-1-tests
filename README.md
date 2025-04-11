@@ -14,9 +14,15 @@ automation-exercise-1-tests/target/cucumber-reports.html
 
 The tests currently use a chrome driver so tests need to be performed using a Chrome browser installed until other drivers can be added.
 
-Testing was performed on a macbook pro x86_64 version (not arm64)
+Testing was performed on a macbook pro x86_64 version (not arm64) with macOS Big Sur 11.5.2 (16GB RAM) installed and Ryzen 7800X3D x64 with Windows 11 (64GB RAM) installed.
 
-Chrome Browser Version 134.0.6998.166 (Official Build) (x86_64)
+The tests all passed when amended to run with either "chrome", "firefox", "edge" and "safari" drivers. The tests currently use a chrome driver.
+driver = DriverUtils.setWebDriver("chrome");
+It is the intention to undertake work to use Selenium Grid to check different browsers and OS in further work.
+
+To automate the safari browser you will need to turn on the Develop menu via the Safari main menu - Safari -> Preferences, click Advanced, select “Show develop menu in menu bar” and then also on the main menu, Develop then select "Allow Remote Automation".
+If spurious fails occur with a safari version please clear the browser cache from the main menu - Develop then select "Empty Caches" and run the tests again.
+
 
 
 **Please note:**
